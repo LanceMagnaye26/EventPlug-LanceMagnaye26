@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="mytracksStyle.css" rel="stylesheet" type="text/css">
+        <style>
+            h1 {
+                position:absolute;
+                text-align:center;
+                top:10%;
+            }
+            input {
+                position:absolute;
+                top:25%;
+                left:42.5%;
+                margin:auto;
+                background-color: grey;
+                border: none;
+                color: white;
+                padding: 5px 60px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                -webkit-transition-duration: 0.4s;
+                transition-duration: 0.4s;
+                cursor: pointer;
+                
+            }
+            input {
+                background-color: white; 
+                color: black; 
+                border: 2px solid grey;
+            }
+
+            input:hover {
+                background-color: grey;
+                color: white;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <h1>Congratulations! Your account has been successfully created! Press continue to return to login page</h1>
+        
+        <form action="/" method="get">
+            <input type="submit" value="Continue"/>
+        </form>
+        
+        {{> footer}}
+    </body>
+</html>

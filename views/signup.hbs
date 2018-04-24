@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="signupStyle.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        
+        <form action="/signup" id="signup" method="post">
+            <label>Enter your email address: </label><input name="emailAddr" type="email" placeholder="eg. whosemans@gmail.com" required/>
+            <br>
+            <br>
+            <label>Enter your password: </label><input name="password1" id="password1" type="password" required/>
+            <br>
+            <br>
+            <label>Re-enter your password: </label><input name="password2" id="password2" type="password" required/>
+            <br>
+            <br>
+            <input id="saveButton" type="submit" value="Register"/>
+        </form>
+        
+        
+        {{> footer}}
+        
+        <script>
+            var accounts=[];       
+            document.getElementById("saveButton").addEventListener("click", function(){
+                if(document.getElementById('password1').value != document.getElementById('password2').value) {
+                    alert('Passwords do not match');
+                };
+            });
+
+
+
+        </script>
+        
+    </body>
+    
+    
+</html>

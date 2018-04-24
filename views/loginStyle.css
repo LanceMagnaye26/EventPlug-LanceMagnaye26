@@ -1,0 +1,94 @@
+#login {
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    top:0px;
+    margin:auto;
+    width:50%;
+    height:70%;
+    text-align: center;
+}
+
+.userInp {
+    width:30%;
+    height:5%;
+    position:absolute;
+    left:0px;
+    right:0px;
+    margin:auto;
+}
+
+#username {
+    top:40%;
+}
+
+#password {
+    top:50%;
+}
+
+#signup {
+    position: absolute;
+    right:1%;
+    top:1%;
+}
+
+#signupButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 10px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#signupButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid grey;
+}
+
+#signupButton:hover {
+    background-color: grey;
+    color: white;
+}
+
+#signinButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 5px 60px;
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    bottom:10%;
+    position:absolute;
+    left:38%;
+    cursor:pointer;
+}
+
+#signinButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid grey;
+}
+
+#signinButton:hover {
+    background-color: grey;
+    color: white;
+}
+
+#userLoginHeader {
+    position:absolute;
+    left:43.75%;
+    margin:auto;
+    top:20%;
+    width:20%;
+    height:10%;
+}

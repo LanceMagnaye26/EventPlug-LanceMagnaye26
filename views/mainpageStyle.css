@@ -1,0 +1,54 @@
+#search {
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:10%;
+    margin:auto;
+    width:31%;
+    height:8%;
+}
+
+#searchButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 5px 60px;
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+#searchButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid grey;
+}
+
+#searchButton:hover {
+    background-color: grey;
+    color: white;
+}
+
+#logoutButton {
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 5px 60px;
+    text-decoration: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position:absolute;
+}
+
+#logoutButton {
+    background-color: white; 
+    color: black; 
+    border: 2px solid grey;
+}
+
+#logoutButton:hover {
+    background-color: grey;
+    color: white;
+}

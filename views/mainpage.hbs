@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="mainpageStyle.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        
+<!--
+        <form action="/concert" method="get">
+            <input id="concertButton" type="submit" value="Look for concert">
+        </form>
+-->
+        
+        <form id="search" action="/mainpage" method="post">
+            <input type="text" name="track" id="trackSearch" placeholder="Please enter a song">
+            <input id="searchButton" type="submit" value="Search">
+        </form>
+        
+        <form action="/" method="get">
+            <input id="logoutButton" type="submit" value="Log out">
+        </form>
+        
+        <h1>{{songTitle0}}</h1>
+        
+        {{> footer}}
+        
+
+    </body>
+</html>

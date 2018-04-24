@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <link href="loginStyle.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        
+        <form id="signup" action="/signup" method="get">
+            <input id="signupButton" type="submit" value="Sign up"/>
+        </form>
+        
+        
+        <h1 id="userLoginHeader">User Login</h1>
+        
+        <form action="/" method="post" id="login">
+            <input name="userLogin" class="userInp" id="username" type="email" placeholder="Username" required>
+            <input name="passLogin" id="password" class="userInp" type="password" placeholder="Password" required>
+            <input id="signinButton" type="submit" value="Sign In">
+        </form>
+        
+        {{> footer}}
+        
+    </body>
+</html>
