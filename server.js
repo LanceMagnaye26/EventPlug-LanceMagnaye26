@@ -7,8 +7,10 @@ const bodyParser = require('body-parser');
 const todo = require('./todo.js');
 
 var key = '88668b813557eb90cd2054ce6cd4c990';
-var key2 = "4nuZkjXqOYPvMAIEtqyRhyaivjgtB76R"
+var key2 = "4nuZkjXqOYPvMAIEtqyRhyaivjgtB76R";
+var songKickKey = 'aFVE4X3HUdTMjVLm';
 var app = express();
+
 
 // var a_user = '';
 // var a_pass = '';
@@ -26,13 +28,39 @@ app.use(express.static(__dirname + '/views'));
 
 hbs.registerHelper('getCurrentYear', () => {
 	return new Date().getFullYear();
-})
+});
+
+app.get('/venues', (request, response) => {
+    todo.getArtistID("Post Malone", songKickKey).then((result) => {
+        return todo.getConcerts(result.id, songKickKey);
+    }).then((result) => {
+        response.render('map.hbs', {
+            title: 'Maps',
+            events: result
+        })
+    })
+});
+
+app.post('/venues', (request, response) => {
+    todo.getArtistID(request.body.artist, songKickKey).then((result) => {
+        return todo.getConcerts(result.id, songKickKey);
+    }).then((result) => {
+        response.render('map.hbs', {
+            title: 'Maps',
+            events: result
+        })
+    })
+});
 
 app.get('/', (request, response) => {
 	todo.logoutCheck(accounts);
 	response.render('login.hbs', {
 		title: 'Login page'
 	})
+});
+
+hbs.registerHelper('json', function(context) {
+    return JSON.stringify(context);
 });
 
 app.post('/', (request, response) => {

@@ -1,3 +1,5 @@
 .idea/
 node_modules/
 accounts.json
+api testing/node_modules
+api testing/.idea

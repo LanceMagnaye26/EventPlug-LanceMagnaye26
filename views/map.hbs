@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDxVlyk9XIT3qUdeRWrhAF9PNRKXbpsMnU">
+    </script>
+    <script>
+        var map;
+        var infowindow;
+        var test = {{{json events}}};
+
+        function initialize() {
+            var center = new google.maps.LatLng(test.event0.lat, test.event0.lng);
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: center,
+                zoom: 4
+            });
+
+            var request = {
+                location: center,
+                radius: 8047,
+                types: ['walmart']
+            };
+            infowindow = new google.maps.InfoWindow();
+
+            var service = new google.maps.places.PlacesService(map);
+
+            service.nearbySearch(request, callback);
+        }
+
+        function callback(results, status) {
+            for (var key in test){
+                createMarker(test[key].lat, test[key].lng, test[key].name);
+            }
+        }
+
+        function createMarker(lat,lng, name) {
+            var placeLoc = new google.maps.LatLng(lat, lng);
+            var marker = new google.maps.Marker({
+                map: map,
+                position: placeLoc
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(name);
+                infowindow.open(map, this);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <title>{{title}}</title>
+    <style>
+        html, body{
+            height:100%;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #map{
+            height: 90%;
+            margin: auto;
+        }
+
+        #searchContainter{
+            height:10%;
+            margin:auto;
+        }
+
+        #artist{
+            height:10%;
+            font-size: 75%;
+        }
+
+        #search{
+            top: 25%;
+            bottom: 25%;
+            margin: auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="searchContainter">
+        <form id="search" method="post" action="/venues">
+            <input type="text" id="artist" name="artist" placeholder="Enter artist name here"><br>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div id="map">
+    </div>
+</body>
+</html>

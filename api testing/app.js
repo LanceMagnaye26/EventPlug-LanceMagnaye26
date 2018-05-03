@@ -8,8 +8,6 @@ var key = 'aFVE4X3HUdTMjVLm';
 
 var app = express();
 
-//SOMETHING WRONG WITH THE MAPS.HBS SCRIPT PART
-
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
